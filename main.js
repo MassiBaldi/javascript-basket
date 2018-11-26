@@ -41,17 +41,19 @@ function univoco() {
   for(var i=0; i < 3; i++ ) {
   gUnivoco += numeri_list.charAt(Math.floor(Math.random() * numeri_list.length));
   }
+  console.log(gUnivoco);
   return gUnivoco;
 }
 var codiceUtente = prompt('inserisci il Codice Giocatore');
 
 for(var i = 0; i < giocatori.length; i++) {
-  if (codiceUtente == giocatori[i]['giocatoreUnivoco']){
-    for(var key in giocatori){
-      console.log(giocatori[key]);
+  var giocatoreUtente = giocatori[i];
+  if (codiceUtente == giocatoreUtente){
+    for(var key in giocatoreUtente){
+      document.writeln(key + ': ' + giocatoreUtente[key] + '</br>')
     }
   }
   else {
-    prompt('Il codice inserito non esite... Riprova')
+    prompt('Il codice inserito non esite... Riprova');
   }
 }
