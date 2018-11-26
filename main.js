@@ -11,7 +11,7 @@
 // creo un array vuoto
 var giocatori = [];
 //ciclo for per popolare l'array dei 100giocatori
-for(var i = 1; i <= 3; i++) {
+for(var i = 1; i <= 100; i++) {
   var giocatore = {
     'giocatoreUnivoco': univoco(),
     'numeroPunti': getRandomNumber(1, 50),
@@ -41,16 +41,19 @@ function univoco() {
   for(var i=0; i < 3; i++ ) {
   gUnivoco += numeri_list.charAt(Math.floor(Math.random() * numeri_list.length));
   }
-  console.log(gUnivoco);
+  if (i < 3){
+    console.log(gUnivoco);
+  }
+  
   return gUnivoco;
 }
 var codiceUtente = prompt('inserisci il Codice Giocatore');
 
 for(var i = 0; i < giocatori.length; i++) {
-  var giocatoreUtente = giocatori[i];
-  if (codiceUtente == giocatoreUtente){
-    for(var key in giocatoreUtente){
-      document.writeln(key + ': ' + giocatoreUtente[key] + '</br>')
+  var giocatore = giocatori[i];
+  if (codiceUtente == giocatore){
+    for(var key in giocatore){
+      document.writeln(key + ': ' + giocatore[key] + '</br>')
     }
   }
   else {
